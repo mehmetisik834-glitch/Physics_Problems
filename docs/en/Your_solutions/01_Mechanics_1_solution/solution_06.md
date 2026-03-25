@@ -1,117 +1,40 @@
-# Problem 6: Variable Velocity
+## 6. Variable Velocity: Kinematics via Calculus
 
-We are given the velocity function $v(t)=t^2+2t-5$ and the initial position $x(0)=4$.
+### Problem Statement
+Given $v(t) = t^2 + 2t - 5$ and initial condition $x(0) = 4$. Find position and acceleration at $t = 3$.
 
-We want:
-
-1. The position at $t=3$, i.e. $x(3)$.
-2. The acceleration at $t=3$, i.e. $a(3)$.
-
----
-
-## 1) Position from velocity theory
-
-Velocity is the derivative of position:
+### 1. Finding Position $x(t)$
+Position is the integral of velocity:
 
 $$
-v(t)=\frac{dx}{dt}
+x(t) = \int (t^2 + 2t - 5) \, dt = \frac{t^3}{3} + t^2 - 5t + C
 $$
 
-So:
+Using $x(0) = 4$, we find $C = 4$. Therefore:
 
 $$
-\frac{dx}{dt}=t^2+2t-5
+x(t) = \frac{t^3}{3} + t^2 - 5t + 4
 $$
 
-Integrate both sides with respect to $t$:
+At $t = 3$:
 
 $$
-x(t)=\int (t^2+2t-5)\,dt
+x(3) = \frac{27}{3} + 9 - 15 + 4 = 7
 $$
 
-Compute the integral term-by-term:
-
-$$
-\int t^2\,dt=\frac{t^3}{3},\qquad
-\int 2t\,dt=t^2,\qquad
-\int (-5)\,dt=-5t
-$$
-
-So the general position function is:
-
-$$
-x(t)=\frac{t^3}{3}+t^2-5t+C
-$$
-
-Use the initial condition $x(0)=4$:
-
-$$
-x(0)=\frac{0^3}{3}+0^2-5\cdot 0 + C = C = 4
-$$
-
-Therefore:
-
-$$
-x(t)=\frac{t^3}{3}+t^2-5t+4
-$$
-
-Now evaluate at $t=3$:
-
-$$
-x(3)=\frac{3^3}{3}+3^2-5\cdot 3+4
-=\frac{27}{3}+9-15+4
-=9+9-15+4
-$$
-
-Compute:
-$$
-9+9=18,\qquad 18-15=3,\qquad 3+4=7
-$$
-
-So:
-
-$$
-x(3)=7
-$$
-
----
-
-## 2) Acceleration from velocity
-
+### 2. Finding Acceleration $a(t)$
 Acceleration is the derivative of velocity:
 
 $$
-a(t)=\frac{dv}{dt}
+a(t) = \frac{d}{dt}(t^2 + 2t - 5) = 2t + 2
 $$
 
-Differentiate:
+At $t = 3$:
 
 $$
-v(t)=t^2+2t-5
-\quad\Rightarrow\quad
-a(t)=2t+2
+a(3) = 2(3) + 2 = 8
 $$
 
-Evaluate at $t=3$:
-
-$$
-a(3)=2\cdot 3 + 2 = 8
-$$
-
----
-
-## Final answers
-
-$$
-x(3)=7
-$$
-
-$$
-a(3)=8
-$$
-
----
-
-## Plot the velocity and acceleration
-
-![Velocity and Acceleration Plots](velocity_acceleration_plots.png)
+### Summary of Results at $t = 3$
+- **Position:** $x = 7$
+- **Acceleration:** $a = 8$
